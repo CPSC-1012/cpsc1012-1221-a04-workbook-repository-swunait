@@ -3,11 +3,11 @@
 const string DataFilePath = @"..\..\..\students.csv";
 List<Student> students = new List<Student>();
 
-AddStudent(students);
-AddStudent(students);
-AddStudent(students);
-DisplayStudents(students);
-if (SaveToFile(students, DataFilePath) == true )
+//AddStudent(students);
+//AddStudent(students);
+//AddStudent(students);
+//DisplayStudents(students);
+//if (SaveToFile(students, DataFilePath) == true )
 {
     int studentCount = ReadFromFile(students, DataFilePath);
     Console.WriteLine($"Read from file was successful with {studentCount} records.");
