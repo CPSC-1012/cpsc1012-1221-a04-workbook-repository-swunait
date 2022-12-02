@@ -120,22 +120,30 @@ static int EnterNewCds(List<CD> cdList)
         Console.Write($"{"Enter Artist's last name: ",30}");
         artistLastName = Console.ReadLine();
 
-        // Create a new Artist with artistFirstName and artistLastName
-        Artist currentArtist = new Artist(artistFirstName, artistLastName);
+        try
+        {
+            // Create a new Artist with artistFirstName and artistLastName
+            Artist currentArtist = new Artist(artistFirstName, artistLastName);
 
-        // Prompt for tracks
-        Console.Write($"{"Enter # of tracks: ",30}");
-        tracks = int.Parse(Console.ReadLine());
-        // Prompt for price
-        Console.Write($"{"Enter CD price: ",30}");
-        price = double.Parse(Console.ReadLine());
+            // Prompt for tracks
+            Console.Write($"{"Enter # of tracks: ",30}");
+            tracks = int.Parse(Console.ReadLine());
+            // Prompt for price
+            Console.Write($"{"Enter CD price: ",30}");
+            price = double.Parse(Console.ReadLine());
 
-        // Create a new CD 
-        CD currentCD = new CD(title, currentArtist, tracks, price);
+            // Create a new CD 
+            CD currentCD = new CD(title, currentArtist, tracks, price);
 
-        // Add the CD to the list
-        cdList.Add(currentCD);
-        newCdCount += 1;
+            // Add the CD to the list
+            cdList.Add(currentCD);
+            newCdCount += 1;
+        } 
+        catch(Exception ex)
+        {
+            Console.WriteLine($"{ex.Message}");
+        }
+        
 
         // Ask if user wants to add another CD
         Console.Write("Add another CD (Y/N): ");
