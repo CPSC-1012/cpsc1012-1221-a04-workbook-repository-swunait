@@ -1,21 +1,28 @@
 ﻿using CourseApp;
 
-// Create a new Course for CPSC1012
-Course currentCourse = new Course("CPSC1012");
-// Add three students to CPSC1012
-currentCourse.AddStudent("Larry");
-currentCourse.AddStudent("Curly");
-currentCourse.AddStudent("Moe");
-// Print properties of the currentCourse
-PrintCourseInfo(currentCourse);
+try
+{
+    // Create a new Course for CPSC1012
+    Course currentCourse = new Course("", 25);
+    // Add three students to CPSC1012
+    currentCourse.AddStudent("Larry");
+    currentCourse.AddStudent("Curly");
+    currentCourse.AddStudent("Moe");
+    // Print properties of the currentCourse
+    PrintCourseInfo(currentCourse);
 
-// Remove Moe from CPSC1012
-currentCourse.RemoveStudent("Moe");
-// Add Shemp to CPSC1012
-currentCourse.AddStudent("Shemp");
+    // Remove Moe from CPSC1012
+    currentCourse.RemoveStudent("Moe");
+    // Add Shemp to CPSC1012
+    currentCourse.AddStudent("Shemp");
 
-// Print properties of the currentCourse
-PrintCourseInfo(currentCourse);
+    // Print properties of the currentCourse
+    PrintCourseInfo(currentCourse);
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
 
 static void PrintCourseInfo(Course currentCourse)
 {
