@@ -6,7 +6,7 @@ namespace CourseApp
 		private string _courseNo;
 
 		// When you have a property that is a list, you need to create a new list either when you declare the field or in the constructor
-		private List<string> _studentNames = new List<string>();
+		private List<string> _studentNames;// = new List<string>();
 		// If you want to create an array instead of a list
 		//private string[] _studentNames;
 
@@ -23,6 +23,10 @@ namespace CourseApp
 		}
 		public void RemoveStudent(string existingStudentName)
 		{
+			if (StudentNames.Contains(existingStudentName) == false )
+			{
+				throw new ArgumentException($"There are no student with the name {existingStudentName}");
+			}
 			StudentNames.Remove(existingStudentName);
 		}
 		public int StudentCount
